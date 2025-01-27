@@ -3,45 +3,22 @@ logs
 *.log
 npm-debug.log*
 yarn-debug.log*
+yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# Dependency directories
-node_modules/
+node_modules
+dist
+dist-ssr
+*.local
 
-# Build artifacts
-dist/
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Vite specific
-.vite
-
-# IDE and editor files
-.idea/
-.vscode/
-
-# macOS
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-
-# Windows
-Thumbs.db
-
-# Optional npm cache directory
-.npm/
-
-# TypeScript
-*.tsbuildinfo
-
-# Jest
-coverage/
-
-# ESLint
-.eslintcache
-
-# Prettier
-.prettier-cache/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
