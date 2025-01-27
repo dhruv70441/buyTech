@@ -1,9 +1,12 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
 const Notfound = () => {
   return (
-    <div>Notfound</div>
+    <Layout>
+      <div>Notfound</div>
+    </Layout>
+    
   )
 }
-
 export default Notfound

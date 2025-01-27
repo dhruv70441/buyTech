@@ -1,13 +1,16 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
-      <Footer />
-    </div>
+    <Layout>
+      <div
+        className=' text-amber-400'
+      >
+        Home
+      </div>
+    </Layout>
+    
   )
 }
 
