@@ -3,6 +3,7 @@ import express, { json } from "express";
 import connectDB from "./dbConnection/db.js";
 import userAuth from "./Routes/userAuth.js";
 import productRoutes from "./Routes/product.js"
+import categoryRoutes from "./Routes/category.js"
 import cors from "cors";
 
 
@@ -17,6 +18,7 @@ app.use(json())
 
 app.use("/api/v1/auth", userAuth)
 app.use("/api/v1/product",productRoutes)
+app.use("/api/v1/category",categoryRoutes)
 
 app.listen(process.env.PORT || 5000, () => {
     console.log(`server is running on port ${process.env.PORT}`);
