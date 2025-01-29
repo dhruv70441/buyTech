@@ -6,7 +6,7 @@ const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <nav className="bg-cyan-900 h-12 flex items-center justify-between text-white font-bold px-4">
+    <nav className=" bg-cyan-900 h-12 flex items-center justify-between text-white font-bold px-4">
       <div>
         <NavLink to="/" className="text-3xl font-bold italic">
           🛒buyTech
@@ -18,6 +18,12 @@ const Navbar = () => {
           className={({ isActive }) => (isActive ? 'text-amber-200 mr-4' : 'text-sky-400 mr-4')}
         >
           Home
+        </NavLink>
+        <NavLink
+          to="/shop"
+          className={({ isActive }) => (isActive ? 'text-amber-200 mr-4' : 'text-sky-400 mr-4')}
+        >
+          Shop
         </NavLink>
 
         {user?.loggedIn ? (
