@@ -5,7 +5,7 @@ import Signup from './pages/Signup';
 import Notfound from './pages/Notfound';
 import Dashboard from './pages/Dashboard';
 import Shop from './pages/Shop';
-import { AuthProvider } from './context/AuthContex';
+import { AuthProvider } from './context/AuthContext';
 function App() {
   return(
     <AuthProvider>

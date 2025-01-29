@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Layout from '../components/Layout'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import AuthContext from '../context/AuthContext';
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] =  useState("");
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const {login} = useContext(AuthContext);
   const navigate = useNavigate();
 
 
@@ -23,6 +25,7 @@ const Login = () => {
 
       if (response.data.status) {
         alert("Login Successful!");
+        login(response.data.token)
         navigate("/");
       } else {
         alert("Login Failed");
@@ -62,4 +65,4 @@ const Login = () => {
     </Layout>
   )
 }
-export default Login
+export default Login;
