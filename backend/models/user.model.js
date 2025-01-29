@@ -1,24 +1,27 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-    firstName:{
+    firstName: {
         type: String,
         required: true,
     },
-    lastName:{
+    lastName: {
         type: String,
         required: true,
     },
-    email:{
+    email: {
         type: String,
         required: true,
         unique: true,
     },
-    password:{
+    password: {
         type: String,
         required: true,
     }
-},{ timestamps: true });
+}, { timestamps: true });
+
+// Create an index on the 'email' field to speed up lookups
+userSchema.index({ email: 1 });
 
 const User = mongoose.model("User", userSchema);
 

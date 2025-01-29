@@ -4,10 +4,8 @@ import Layout from '../components/Layout';
 const Home = () => {
   return (
     <Layout>
-      <div
-        className=' text-amber-400'
-      >
-        Home
+      <div>
+        home
       </div>
     </Layout>
     
