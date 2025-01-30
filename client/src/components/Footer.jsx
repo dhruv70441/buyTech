@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer 
-        className=' bg-cyan-900'
+        className='bg-[#262626]'
     >
         <div
             className='flex h-12 items-center justify-center text-white text-xl'

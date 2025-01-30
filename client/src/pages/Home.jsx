@@ -1,57 +1,64 @@
-import React, { useEffect, useState } from 'react';
-import Layout from '../components/Layout';
-import { NavLink } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import Layout from "../components/Layout";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 const Home = () => {
-  // State to store category data
   const [categories, setCategories] = useState([]);
 
-  // Fetch categories on component mount
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/category');
-        setCategories(response.data); // Set the fetched categories in the state
+        const response = await axios.get("http://localhost:8080/api/v1/category");
+        setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
     };
 
     fetchCategories();
-  }, []); // Empty dependency array ensures it runs only once when the component mounts
+  }, []);
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-100">
-        {/* Hero Section */}
-        <section className="bg-blue-900 text-white text-center py-20">
-          <h1 className="text-5xl font-bold">Discover the Latest Tech</h1>
-          <p className="text-xl mt-4">Exclusive deals on mobiles, laptops, smartwatches & more!</p>
+      <div className="min-h-screen bg-gradient-to-r from-[#F4F6F8] to-[#E2E8F0] text-[#2B2B2B]">
+        {/* Hero Section (Updated Banner) */}
+        <section className="bg-gradient-to-r  from-[#0e7480] to-[#6EE7B7] text-white text-center py-20 px-6 shadow-lg">
+          <h1 className="text-5xl font-extrabold tracking-wide text-[#F8C630] drop-shadow-lg">
+            Discover the Newest Tech
+          </h1>
+          <p className="text-xl mt-4 opacity-90">
+            Get the best deals on mobiles, laptops, and accessories!
+          </p>
           <NavLink to="/shop">
-            <button className="mt-6 bg-amber-500 px-6 py-3 text-lg font-semibold rounded-lg hover:bg-amber-600 transition">
+            <button className="mt-6 bg-[#FF5E57] text-white px-8 py-3 text-lg font-semibold rounded-lg hover:bg-[#F8C630] hover:text-[#2B2B2B] transition-all duration-300 shadow-md">
               Shop Now
             </button>
           </NavLink>
         </section>
-
         {/* Categories Section */}
-        <section className="max-w-6xl mx-auto py-10">
-          <h2 className="text-3xl font-semibold text-center">Shop by Category</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+        <section className="max-w-6xl mx-auto py-16 px-6">
+          <h2 className="text-4xl font-semibold text-center text-[#FF5E57]">
+            Shop by Category
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
             {categories.length > 0 ? (
               categories.map((category) => (
                 <NavLink
                   key={category._id}
-                  to={`/category/${category.category.toLowerCase()}`}
-                  className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center"
+                  to={`/shop/${category.category}`}
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 text-center border border-[#DDDDDD] hover:border-[#FF5E57] duration-300"
                 >
-                  <img src={category.imageUrl} alt={category.category} className="w-24 h-24 mx-auto" />
-                  <h3 className="text-xl font-bold mt-2">{category.category}</h3>
+                  <img
+                    src={category.imageUrl}
+                    alt={category.category}
+                    className="w-28 h-28 mx-auto object-cover rounded-md "
+                  />
+                  <h3 className="text-xl font-bold mt-4">{category.category}</h3>
                 </NavLink>
               ))
             ) : (
-              <p>Loading categories...</p>
+              <p className="text-center text-gray-500">Loading categories...</p>
             )}
           </div>
         </section>
