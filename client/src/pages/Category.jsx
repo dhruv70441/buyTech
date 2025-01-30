@@ -8,11 +8,11 @@ const Category = () => {
     const [products, setProducts] = useState([]);
     const { category } = useParams();
 
-    // Fetch products based on categoryId
+    // Fetch products based on category
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/v1/product/category/${category}`);
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}product/category/${category}`);
                 setProducts(response.data.productData); // Set the fetched products in the state
             } catch (error) {
                 console.error("Error fetching products:", error);

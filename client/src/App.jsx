@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import Shop from './pages/Shop';
 import { AuthProvider } from './context/AuthContext';
 import Category from './pages/Category';
+import ProductDetails from './pages/ProductDetails';
 function App() {
   return(
     <AuthProvider>
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/shop/:category' element={<Category />} />
+        <Route path='/product/:productId' element={<ProductDetails />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/dashboard' element={<Dashboard />} />

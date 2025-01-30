@@ -16,7 +16,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/auth/signup", {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}auth/signup`, {
         firstName,
         lastName,
         email,
