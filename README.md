@@ -13,15 +13,13 @@ An e-commerce application built using the MERN stack (MongoDB, Express, React, N
 ## Features
 
 - User authentication with JWT (Login & Registration)
-- Add to cart and checkout functionality
-- Product listing and filtering
 - Secure backend API with Express and MongoDB
 - React Context API for state management
-- Fetch API for backend communication
+- axios for backend communication
 
 ## Technologies Used
 
-- **Frontend:** React, Context API, Fetch API, Tailwind CSS
+- **Frontend:** React, Context API, Tailwind CSS
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB, Mongoose
 - **Authentication:** JWT Authentication
@@ -67,5 +65,10 @@ npm install
 2] Start the frontend server:
 ```bash
 npm start
+```
+
+3] Create a `.env` file:
+```
+VITE_API_URL=<You backend URL>
 ```
 
