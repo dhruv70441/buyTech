@@ -28,7 +28,7 @@ const Home = () => {
             Discover the Newest Tech
           </h1>
           <p className="text-xl mt-4 opacity-90">
-            Get the best deals on mobiles, laptops, and accessories!
+            Get the best deals on mobiles, laptops, and other products!
           </p>
           <NavLink to="/shop">
             <button className="mt-6 bg-[#FF5E57] text-white px-8 py-3 text-lg font-semibold rounded-lg hover:bg-[#F8C630] hover:text-[#2B2B2B] transition-all duration-300 shadow-md">
