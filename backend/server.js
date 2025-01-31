@@ -12,7 +12,13 @@ connectDB()
 const app = express();
 
 //middlewares
-app.use(cors())
+// CORS configuration
+const corsOptions = {
+    origin: ['http://localhost:5173', 'https://buytech.netlify.app/'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(json())
 
 
