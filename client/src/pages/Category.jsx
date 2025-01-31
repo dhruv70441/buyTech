@@ -32,11 +32,14 @@ const Category = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {products.length > 0 ? (
             products.map((product) => (
-                <div key={product._id} className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
-                <img src={product.imageUrl} alt={product.name} className="w-full h-48 object-contain rounded-md" />
-                <h3 className="text-xl font-semibold mt-2">{product.name}</h3>
-                <p className="text-lg font-bold text-gray-700 mt-2">${product.price}</p>
-                </div>
+                <NavLink key={product._id} to={`/product/${product._id}`}>
+
+                    <div key={product._id} className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                        <img src={product.imageUrl} alt={product.name} className="w-full h-48 object-contain rounded-md" />
+                        <h3 className="text-xl font-semibold mt-2">{product.name}</h3>
+                        <p className="text-lg font-bold text-gray-700 mt-2">${product.price}</p>
+                    </div>
+                </NavLink>
             ))
             ) : (
             <p>Loading products...</p>
