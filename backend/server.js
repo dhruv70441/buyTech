@@ -14,7 +14,7 @@ const app = express();
 //middlewares
 // CORS configuration
 const corsOptions = {
-    origin: ['http://localhost:5173', 'https://buytech.netlify.app/'],
+    origin: ['http://localhost:5173', 'https://buytech.netlify.app'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 };
